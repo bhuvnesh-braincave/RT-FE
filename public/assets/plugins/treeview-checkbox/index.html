@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>TreeView With Checkbox Example</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<script type="text/javascript" src="js/jquery.treeview.js"></script>
+	<link href="css/jquery.treeview.css" rel="stylesheet">
+<style>
+body { background-color: #fafafa; font-family: 'Roboto'; }
+</style>
+</head>
+<body>
+	
+</body>
+
+<script type="text/javascript">
+
+
+var treeObject = [
+	{
+		text:"Parent 1", 
+		checked:true, // Optional
+		id:15,otherDatas:"Other Datas", // Other Datas Optional
+		children:[ // Required
+			{ text:"Child 1" /* Required */, checked:true	},
+			{ text:"Child 2" /* Required */	}
+		]
+	},
+	{
+		text:"Parent 2", // Required
+		children:[
+			{
+				text:"Parent 3",
+				children:[
+					{text:"Child 3",checked:true},
+					{text:"Child 4"}
+				]
+			}
+		]
+	}
+]
+	var tw = new TreeView(
+		treeObject,
+		{showAlwaysCheckBox:true,fold:false});
+	document.body.appendChild( tw.root	 )
+
+
+</script>
+
+
+</html>
